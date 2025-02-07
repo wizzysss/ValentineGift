@@ -1,0 +1,101 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffdde1;
+    background-image: radial-gradient(circle, #ff9a9e, #fad0c4);
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+  }
+  
+  .valentine-container {
+    text-align: center;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: 350px;
+  }
+
+  h1 {
+    color: #d63384;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    color: #d63384;
+    font-size: 2rem;
+  }
+
+  input {
+    padding: 10px;
+    border: 2px solid #d63384;
+    border-radius: 10px;
+    width: 80%;
+    text-align: center;
+  }
+
+  button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #d63384;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  button:hover {
+    background-color: #b2226d;
+  }
+
+  #result {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+  }
+</style>
+
+<Layout>
+  <div class="valentine-container">
+    <h1></h1>
+    <h2>password theriyadhu</h2>
+    <input type="text" id="answerInput" placeholder="Enter your answer...">
+    <button id="submitButton">Submit</button>
+    <p id="result"></p>
+  </div>
+</Layout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const inputElement = document.getElementById("answerInput");
+    const buttonElement = document.getElementById("submitButton");
+    const resultElement = document.getElementById("result");
+
+    if (!inputElement || !buttonElement || !resultElement) {
+      console.error("One or more elements not found.");
+      return;
+    }
+
+    buttonElement.addEventListener("click", () => {
+      const inputValue = (inputElement as HTMLInputElement).value.trim().toLowerCase();
+
+      if (inputValue === "theriyadhu") {
+        resultElement.textContent = "Super babe sekaram kannu pudichitiye, ok next clue is /findfour";
+        resultElement.style.color = "green";
+      } else {
+        resultElement.textContent = "Sorry, not the answer dear 😔";
+        resultElement.style.color = "red";
+      }
+    });
+  });
+</script>

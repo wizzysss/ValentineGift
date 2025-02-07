@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffdde1;
+    background-image: radial-gradient(circle, #ff9a9e, #fad0c4);
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+  }
+  
+  .valentine-container {
+    text-align: center;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+
+  .valentine-container::before, 
+  .valentine-container::after {
+    content: '❤️';
+    font-size: 30px;
+    position: absolute;
+  }
+
+  .valentine-container::before {
+    top: -20px;
+    left: -20px;
+  }
+
+  .valentine-container::after {
+    bottom: -20px;
+    right: -20px;
+  }
+
+  h2 {
+    color: #d63384;
+    font-size: 2rem;
+  }
+</style>
+
+<div class="valentine-container">
+  <h2>Welcome to my Valentine's Day, Gayathri ❤️</h2>
+</div>
